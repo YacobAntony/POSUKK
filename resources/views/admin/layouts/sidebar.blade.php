@@ -68,8 +68,8 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
+        <a href="/logout" class="nav-link">
+          <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>
     </ul>
@@ -95,7 +95,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/admin/post" class="nav-link">
+            <a href="/" class="nav-link {{Request::is('/') ? 'active' : ''}}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Dashboard
@@ -103,12 +103,37 @@
             </a>
 
             <li class="nav-item">
-            <a href="/admin/user" class="nav-link">
+            <a href="/admin/kategori" class="nav-link {{Request::is('admin/kategori*') ? 'active' : ''}} ">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Kategori
+              </p>
+            </a>
+
+            <li class="nav-item">
+            <a href="/admin/produk" class="nav-link {{Request::is('admin/produk*') ? 'active' : ''}} ">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Produk
+              </p>
+            </a>
+
+            <li class="nav-item">
+            <a href="/admin/user" class="nav-link {{Request::is('admin/user*') ? 'active' : ''}}" >
               <i class="nav-icon fas fa-users"></i>
               <p>
                 User
               </p>
             </a>
+
+            <li class="nav-item">
+            <a href="/admin/transaksi" class="nav-link {{Request::is('admin/transaksi*') ? 'active' : ''}}" >
+              <i class="nav-icon fas fa-exchange-alt"></i>
+              <p>
+                Transaksi
+              </p>
+            </a>
+
 
           </li>
         </ul>
