@@ -1,5 +1,6 @@
-<div class="container-fluid mt-2">
+<main role="main" class="main-content">
 
+<div class="container-fluid mt-2">
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -12,7 +13,8 @@
                     <th>NO</th>
                     <th>nama </th>
                     <th>Email</th>
-                    <th>Action</th>
+                    <th>Peran</th>
+                    <th>Aksi</th>
                 </tr>
  
                 @foreach($user as $moking)
@@ -21,15 +23,16 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$moking->name }}</td>
                     <td>{{ $moking->email }}</td>
+                    <td>{{ $moking->role }}</td>
                     <td>
                         <div class="d-flex">
-                    <a href="/admin/user/{{ $moking->id }}/edit" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
+                    <a href="/admin/user/{{ $moking->id }}/edit" class="btn btn-info btn-sm"><i class="fe fe-edit"></i></a>
 
                     <!-- iki delete -->
                     <form action="/admin/user/{{ $moking->id }}" method="POST">
                         @method('delete')
                         @csrf
-                        <button type="submit" class ="btn btn-danger btn-sm ml-1"><i class = "fas fa-trash"></i></button>
+                        <button type="submit" class ="btn btn-danger btn-sm ml-1"><i class = "fe fe-trash"></i></button>
                     </form>
                     <!-- endelet -->
                     </div>

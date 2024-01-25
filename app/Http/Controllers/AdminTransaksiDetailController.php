@@ -11,7 +11,7 @@ class AdminTransaksiDetailController extends Controller
 {
     function create(Request $request)
     {
-        //dd ($request->all());
+       
         $produk_id = $request->produk_id;
         $transaksi_id= $request->transaksi_id;
         // Update stock

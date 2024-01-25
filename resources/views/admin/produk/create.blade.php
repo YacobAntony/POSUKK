@@ -1,3 +1,4 @@
+<main role="main" class="main-content">
 <div class="row p-2">
     <div class="col-md-6">
         <div class="card">
@@ -13,8 +14,8 @@
                <hr>       
                     @csrf
 
-                    <label for="">Nama Kategori</label>
-                    <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama Kategori" value="{{ isset($produk) ? $produk->nama : old('nama') }}">
+                    <label for="">Nama</label>
+                    <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama Produk" value="{{ isset($produk) ? $produk->nama : old('nama') }}">
                     @error('nama')
                         <div class="invalid-feedbeck">
                             {{ $message }}

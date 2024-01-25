@@ -1,24 +1,26 @@
-</div>
+ <!-- main -->
+ </div> <!-- .wrapper -->
+    <script src="{{ asset ('vendor/light/js/jquery.min.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/popper.min.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/moment.min.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/simplebar.min.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/daterangepicker.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/jquery.stickOnScroll.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/tinycolor-min.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/config.js') }}"></script>
+    <script src="{{ asset ('vendor/light/js/apps.js') }}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
-</div>
-<!-- ./wrapper -->
-<!-- jQuery -->
-<script src="/vendor/adminlte/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="/vendor/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/vendor/adminlte/dist/js/adminlte.min.js"></script>
-
-</body>
-
-    
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-56159088-1');
+    </script>
+  </body>
 </html>

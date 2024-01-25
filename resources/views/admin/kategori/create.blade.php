@@ -1,3 +1,4 @@
+<main role="main" class="main-content">
 <div class="row p-2">
     <div class="col-md-6">
         <div class="card">

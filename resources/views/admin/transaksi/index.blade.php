@@ -1,3 +1,4 @@
+<main role="main" class="main-content">
 <div class="container-fluid pt-2">
     <div class="row">
         <div class="col-md-12">
@@ -24,11 +25,11 @@
                             <td> Rp.{{ format_rupiah($item->total) }}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="/admin/transaksi/{{ $item->id }}/edit" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
+                                    <a href="/admin/transaksi/{{ $item->id }}/edit" class="btn btn-info btn-sm"><i class="fe fe-edit"></i></a>
                                     <form action="/admin/transaksi/{{ $item->id }}" method="POST">
                                         @method('delete')
                                         @csrf
-                                        <button type="submit" class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></button>
+                                        <button type="submit" class="btn btn-danger btn-sm ml-1"><i class="fe fe-trash"></i></button>
                                     </form>
                                 </div>
                             </td>

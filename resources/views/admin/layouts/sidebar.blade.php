@@ -1,146 +1,97 @@
-<!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-</li>
-    </ul>
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  John Pierce
-                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/logout" class="nav-link">
-          <i class="fas fa-sign-out-alt"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <!-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-  
-      
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+<body class="vertical  light  ">
+    <div class="wrapper">
+    <nav class="topnav navbar navbar-light">
+        <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+          <i class="fe fe-menu navbar-toggler-icon"></i>
+        </button>
+        <ul class="nav">
           <li class="nav-item">
-            <a href="/" class="nav-link {{Request::is('/') ? 'active' : ''}}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Dashboard
-              </p>
+            <a class="nav-link text-muted my-2" href="" data-toggle="modal" data-target=".modal-shortcut">
+              <span class="fe fe-grid fe-16"></span>
             </a>
-
-            <li class="nav-item">
-            <a href="/admin/kategori" class="nav-link {{Request::is('admin/kategori*') ? 'active' : ''}} ">
-              <i class="nav-icon fas fa-list"></i>
-              <p>
-                Kategori
-              </p>
-            </a>
-
-            <li class="nav-item">
-            <a href="/admin/produk" class="nav-link {{Request::is('admin/produk*') ? 'active' : ''}} ">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Produk
-              </p>
-            </a>
-
-            <li class="nav-item">
-            <a href="/admin/user" class="nav-link {{Request::is('admin/user*') ? 'active' : ''}}" >
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                User
-              </p>
-            </a>
-
-            <li class="nav-item">
-            <a href="/admin/transaksi" class="nav-link {{Request::is('admin/transaksi*') ? 'active' : ''}}" >
-              <i class="nav-icon fas fa-exchange-alt"></i>
-              <p>
-                Transaksi
-              </p>
-            </a>
-
-
           </li>
+          <li class="nav-item nav-notif">
+            <a class="nav-link text-muted my-2" href="/logout" >
+              <span class="fe fe-bell fe-16"></span>
+              <span class="dot dot-md bg-success"></span>
+            </a>
+</li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+          <i class="fe fe-x"><span class="sr-only"></span></i>
+        </a>
+        <nav class="vertnav navbar navbar-light">
+          <!-- nav bar -->
+          <div class="w-100 mb-4 d-flex">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+              <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+                <g>
+                  <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+                  <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+                  <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+                </g>
+              </svg>
+            </a>
+          </div>
+         
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+  
+              
+            <li class="nav-item w-100">
+              <a class="nav-link" href="/admin/dashboard">
+                <i class="fe fe-layers fe-16"></i>
+                <span class="ml-3 item-text">Dashboard</span>
+              </a>
+</li>
 
-  <div class="content-wrapper">
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Apps</span>
+          </p>
+
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+              <a class="nav-link" href="/admin/kategori">
+                <i class="fe fe-grid fe-16"></i>
+                <span class="ml-3 item-text">Kategori</span>
+              </a>
+            </li>
+
+            <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+              <a class="nav-link" href="/admin/user">
+                <i class="fe fe-user fe-16"></i>
+                <span class="ml-3 item-text">User</span>
+              </a>
+            </li>
+
+             <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+              <a class="nav-link" href="/admin/produk">
+                <i class="fe fe-package fe-16"></i>
+                <span class="ml-3 item-text">Produk</span>
+              </a>
+            </li>
+
+            <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+              <a class="nav-link" href="/admin/transaksi">
+                <i class="fe fe-credit-card fe-16"></i>
+                <span class="ml-3 item-text">Transaksi</span>
+              </a>
+            </li>
+
+        
+          </ul>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Extra</span>
+          </p>
+
+          <div class="btn-box w-100 mt-4 mb-1">
+            <a href="/admin/transaksi/create" class="btn mb-2 btn-primary btn-lg btn-block">
+              <i class="fe fe-shopping-cart fe-12 mx-2"></i><span class="small">Buy now</span>
+            </a>
+          </div>
+        </nav>
+      </aside>

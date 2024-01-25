@@ -1,3 +1,4 @@
+<main role="main" class="main-content">
 <div class="container-fluid pt-2">
     <div class="row">
 
@@ -112,14 +113,14 @@
                     </table>
 
                     <a href="" class="btn btn-info"><i class="fas fa-file"></i> Pending </a>
-                    <a href="{{ URL::previous() }}" class="btn btn-success"><i class="fas fa-check"></i> Selesai </a>
+                    <a href="/admin/transaksi/detail/selesai/{{ Request::segment(3) }}" class="btn btn-success"><i class="fas fa-check"></i> Selesai </a>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <div class="row p-2">
+    <div class="row">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
