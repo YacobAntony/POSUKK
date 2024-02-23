@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->bigInteger('subtotal');
+            $table->bigInteger('dibayarkan');
             $table->string('kasir_name')->nullable();
-            $table->enum('status', ['selesai', 'pending'])->default('pending');
+            $table->enum('status', ['selesai', 'menunggu'])->default('menunggu');
             $table->timestamps();
         });
     }

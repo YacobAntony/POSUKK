@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminUserController extends Controller
@@ -28,6 +29,7 @@ class AdminUserController extends Controller
     public function create()
     {
         $data = [
+            'title' => 'Create user',
             'content' => 'admin.user.create'
         ];
          return view('admin.layouts.wrapper', $data);
@@ -39,9 +41,10 @@ class AdminUserController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'email' => 'required|email|unique:users,email',
             'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' =>'required',
+            'role'  => 'required',
+            'password' => 'required|min:8|regex:/[0-9]/|regex:/[@$!%*#?&]/',
             're_password' => 'required|same:password',
         ]);
 
@@ -66,7 +69,7 @@ class AdminUserController extends Controller
     public function edit(string $id)
     {
         $data = [
-            
+            'title' => 'edit data',
             'user'    => User::find($id),
             'content' => 'admin.user.create'
         ];
@@ -78,34 +81,55 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Alert::success('success', 'Selamat datang');
+        // Mendapatkan informasi pengguna yang sedang login
+        $currentUser = Auth::user();
+    
+        // Memeriksa apakah pengguna yang sedang login sama dengan pengguna yang ingin diubah
+        if ($currentUser->id == $id) {
+            // Jika iya, kembalikan respons atau ambil tindakan lain sesuai kebutuhan
+            Alert::warning('peringatan', 'User yang sedang Login Tidak dapat di edit!');
+            return redirect()->back()->with('error', 'Tidak dapat mengedit pengguna yang sedang login.');
+        } 
+     
         $user = User::find($id);
         $data = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$user->id,
             're_password' => 'same:password',
         ]);
-
-
-        if($request->password !=''){
-            $data['password'] = Hash::make ($request->password);
-        }else{
+    
+        if ($request->password != '') {
+            $data['password'] = Hash::make($request->password);
+        } else {
             $data['password'] = $user->password;
-            }
- 
+        }
+    
         $user->update($data);
-        return redirect('/admin/user')->with('success','data berhasil diedit' );
-    }
+                Alert::success('Sukses', 'User berhasil diubah');
 
-    /**
-     * Remove the specified resource from storage.
-     */
+        return redirect('/admin/user')->with('success', 'Data berhasil diedit.');
+    }
+    
+
+   
     public function destroy(string $id)
-    {
-        $user = User::find($id);
-        Alert::info('success', 'Data berhasil di hapus');
-        $user->destroy($id);
-        return redirect('/admin/user')->with('success','data berhasil dihapus' );
+{
+    // Mendapatkan informasi pengguna yang sedang login
+    $currentUser = Auth::user();
 
+    // Memeriksa apakah pengguna yang sedang login sama dengan pengguna yang ingin dihapus
+    if ($currentUser->id == $id) {
+        // Jika iya, kembalikan respons atau ambil tindakan lain sesuai kebutuhan
+        Alert::warning('peringatan', 'User yang sedang Login Tidak dapat di hapus!');
+        return redirect()->back()->with('error', 'Tidak dapat menghapus pengguna yang sedang login.');
     }
+
+    // Lanjutkan dengan logika penghapusan pengguna jika pengguna yang sedang login bukan yang dihapus
+    $user = User::find($id);
+    Alert::info('success', 'Data berhasil dihapus');
+    $user->delete();
+
+    return redirect('/admin/user')->with('success', 'Data berhasil dihapus.');
+}
+
 }

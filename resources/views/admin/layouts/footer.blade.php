@@ -1,5 +1,7 @@
  <!-- main -->
+ 
  </div> <!-- .wrapper -->
+ 
     <script src="{{ asset ('vendor/light/js/jquery.min.js') }}"></script>
     <script src="{{ asset ('vendor/light/js/popper.min.js') }}"></script>
     <script src="{{ asset ('vendor/light/js/moment.min.js') }}"></script>

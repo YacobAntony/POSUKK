@@ -7,12 +7,11 @@ use App\Models\Transaksi;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
-use Carbon\Carbon;
-use Illuminate\Validation\ValidationException;
-  
 
-class AdminTransaksiDetailController extends Controller
+
+class KasirTransaksiDetailController extends Controller
 {
+   
 
     public function index()
     {
@@ -110,90 +109,7 @@ class AdminTransaksiDetailController extends Controller
             'status' => 'selesai'
         ];
         $transaksi->update($data);
-        return redirect('/admin/transaksi');
+        return redirect('/kasir/transaksi');
     }
-
-    
-////dasbot/////////////////////////////////////
-    
-
-    public function getTotalPendapatanBulanIni()
-    {
-    $totalPendapatan = TransaksiDetail::whereMonth('created_at', now()->month)
-        ->sum('subtotal');
-
-    return $totalPendapatan;
-     }
- 
-     public function getAverageSubtotal()
-     {
-         return TransaksiDetail::avg('subtotal');
-     }
-     
-     public function getTotalPesanan()
-    {
-    return TransaksiDetail::whereMonth('created_at', now()->month)
-    ->sum('qty');
-    }
-     
-     public function getTotalSubtotalToday()
-        {
-            $totalSubtotalToday = TransaksiDetail::whereDate('created_at', Carbon::today())->sum('subtotal');
-            return $totalSubtotalToday;
-        }
-
-        public function getTotalSubtotalYesterday()
-        {
-            $totalSubtotalYesterday = TransaksiDetail::whereDate('created_at', Carbon::yesterday())->sum('subtotal');
-            return $totalSubtotalYesterday;
-        }
-
-        public function getTotalTransaksiDetail()
-    
-            {
-                $startDate = now()->startOfMonth(); // Awal bulan ini
-                $endDate = now(); // Saat ini
-                 $totalTransaksiDetail = TransaksiDetail::whereBetween('created_at', [$startDate, $endDate])->count();
-                return $totalTransaksiDetail;
-            }
-
-            // Di dalam AdminTransaksiDetailController
-
-        public function getBestSellingProduct()
-        {
-            $bestSellingProducts = TransaksiDetail::select('produk_name', \DB::raw('SUM(qty) as total_qty'))
-                ->groupBy('produk_name')
-                ->orderByDesc('total_qty')
-                ->take(5) // Ambil lima produk terlaris
-                ->get();
-
-            return $bestSellingProducts;
-       }
-
-            public function getTotalTransaksiDetailToday()
-            {
-                $todayStart = Carbon::now()->startOfDay();
-                $todayEnd = Carbon::now()->endOfDay();
-                $totalTransaksiDetailToday = TransaksiDetail::whereBetween('created_at', [$todayStart, $todayEnd])->count();
-                return $totalTransaksiDetailToday;
-            }
-            public function getTotalProduk()
-
-                {
-                    $totalProduk = Produk::count();
-
-                    return $totalProduk;
-                }
-                public function getProdukData()
-                {
-                    $produkData = Produk::latest()->limit(6)->get();
-                    return $produkData;
-                }
-
-                public function getTransaksiData()
-                {
-                    $transaksiData = Transaksi::latest()->limit(6)->get();
-                    return $transaksiData;
-                }
 
 }

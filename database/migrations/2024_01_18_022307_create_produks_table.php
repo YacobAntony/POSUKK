@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('kategori_id');
             $table->bigInteger('harga')->default(0);
             $table->integer('stock');
-            $table->text('gambar')->nullable();
+            $table->float('diskon')->nullable();
             $table->timestamps();
         });
     }

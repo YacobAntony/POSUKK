@@ -45,10 +45,9 @@ class AdminProdukController extends Controller
             'kategori_id' => 'required',
             'harga' => 'required',
             'stok' => 'required',
+            'diskon' => 'nullable',
 
         ]);
-
-      
 
         Produk::create($data);
         Alert::success('success', 'data berhasil ditambah');
@@ -88,10 +87,13 @@ class AdminProdukController extends Controller
             'kategori_id' => 'required',
             'harga' => 'required',
             'stok' => 'required',
+            'diskon' => 'nullable',
+
+            
         ]);
         $produk->update($data);
         Alert::success('Sukses', 'Data Berhasil Diupdate');
-        return redirect()->back();
+        return redirect('/admin/produk');
     }
 
     /**
@@ -106,4 +108,6 @@ class AdminProdukController extends Controller
         return redirect()->back();
 
     }
+
+    
 }

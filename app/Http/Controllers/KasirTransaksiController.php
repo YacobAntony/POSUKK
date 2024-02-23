@@ -8,7 +8,7 @@ use App\Models\TransaksiDetail;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class AdminTransaksiController extends Controller
+class KasirTransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -51,7 +51,7 @@ class AdminTransaksiController extends Controller
             'total' => 0
         ];
         $transaksi = Transaksi::create($data);
-        return redirect('/admin/transaksi/'.$transaksi->id.'/edit');
+        return redirect('/kasir/transaksi/'.$transaksi->id.'/edit');
     }
 
 
@@ -148,5 +148,4 @@ class AdminTransaksiController extends Controller
         return redirect()->back();
     }
 
-    
 }
