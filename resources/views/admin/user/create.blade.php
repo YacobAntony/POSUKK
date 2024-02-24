@@ -31,7 +31,7 @@
 
                     @error('email')
                     <div class="invalid-feedback">
-                        {{ $message }}
+                        Pengguna Tersebut Sudah Ada
                     </div>
                     @enderror
                                

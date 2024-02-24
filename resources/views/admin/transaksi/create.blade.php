@@ -209,13 +209,13 @@
 
                             <!-- <a href="" class="btn btn-info"><i class="fe fe-file"></i> Print </a> -->
                             @if(auth()->user()->role != "kasir")
-                            <a href="/admin/transaksi/detail/selesai/{{ Request::segment(3) }}" class="btn btn-success{{ $kembalian <= 0 ? ' disabled' : '' }}">
+                            <a href="/admin/transaksi/detail/selesai/{{ Request::segment(3) }}" class="btn btn-success{{ $kembalian <= -1 ? ' disabled' : '' }}">
                                 <i class="fe fe-check"></i> Selesai
                             </a>
                         @endif
 
                         @if(auth()->user()->role != "admin")
-                            <a href="/kasir/transaksi/detail/selesai/{{ Request::segment(3) }}" class="btn btn-success{{ $kembalian <= 0 ? ' disabled' : '' }}">
+                            <a href="/kasir/transaksi/detail/selesai/{{ Request::segment(3) }}" class="btn btn-success{{ $kembalian <= -1 ? ' disabled' : '' }}">
                                 <i class="fe fe-check"></i> Selesai
                             </a>
                         @endif

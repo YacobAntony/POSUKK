@@ -15,12 +15,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group mb-3">
-                            <label for=""><b>Nama Kategori</b></label>
+                            <label for=""><b>Nama Produk</b></label>
                             <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
                             placeholder="Nama produk" value="{{ isset($produk) ? $produk->nama : old('nama') }}">
                             @error('nama')
                                 <div class="invalid-feedback">
-                                    {{ $message }}
+                                    Produk Sudah Ada
                                 </div>
                             @enderror
                         </div>

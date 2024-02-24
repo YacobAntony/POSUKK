@@ -22,7 +22,7 @@
                             placeholder="Nama Kategori" value="{{ isset($kategori) ? $kategori->nama : old('nama') }}">
                             @error('nama')
                                 <div class="invalid-feedback">
-                                    {{ $message }}
+                                Kategori Sudah Ada
                                 </div>
                             @enderror
                         </div>

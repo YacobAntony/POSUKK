@@ -79,7 +79,7 @@ class KasirTransaksiDetailController extends Controller
             $transaksi->update($dt);
         }
     
-        return redirect('/admin/transaksi/' . $transaksi_id . '/edit');
+        return redirect('/kasir/transaksi/' . $transaksi_id . '/edit');
     }
     
     

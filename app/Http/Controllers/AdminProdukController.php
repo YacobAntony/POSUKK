@@ -16,7 +16,7 @@ class AdminProdukController extends Controller
     {
         $data = [
             'title'   => 'Manajmen Produk',
-            'produk' => Produk::paginate(10),
+            'produk' => Produk::get(),
             'content' => 'admin.produk.index'
         ];
          return view('admin.layouts.wrapper', $data);

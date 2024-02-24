@@ -24,8 +24,6 @@
         @php
             $totalQty = 0; // Inisialisasi total qty
             $totalSubtotal = 0; // Inisialisasi total subtotal
-            $totalTrans = 0; // Inisialisasi total subtotal
-
         @endphp
 
         @foreach ($transaksiDetails as $item)
@@ -40,7 +38,6 @@
             @php
                 $totalQty += $item->qty; // Akumulasi total qty
                 $totalSubtotal += $item->subtotal; // Akumulasi total subtotal
-                $totalTrans += $item->produk_name; // Akumulasi total subtotal
             @endphp
         @endforeach
     </tbody>
@@ -53,8 +50,7 @@
             {{ format_rupiah($totalSubtotal) }}</td>
             <td colspan="2"><strong>Total Barang dipesan</strong>
             {{ $totalQty }}</td>
-            <td colspan="2"><strong>Total Transaksi</strong>
-            {{ $totalTrans }}</td>
+    
 </table>
 
     <!-- Add any additional content or styling as needed -->

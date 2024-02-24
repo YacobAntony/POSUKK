@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="container-fluid mt-2">
             <div class="alert alert-warning bg-brown text-white text-center">
-    <img src="{{ asset('vendor/publish/logo.png') }}" class="rounded-image" width="auto" height="auto" alt="Yumewak Image">
+            <img src="{{ asset('vendor/publish/logo.png') }}" class="rounded-image" width="auto" height="auto" alt="Yumewak Image">
             </div>
             </div>
         </div>
